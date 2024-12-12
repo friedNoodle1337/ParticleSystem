@@ -15,37 +15,26 @@ keys = {
     32: False,   # SPACE (подъем вверх)
 }
 
-# Отдельный флаг для отслеживания состояния переключения теней
-toggle_pressed = {
-    't': False
-}
-
 
 # Обработка нажатий клавиш
 def key_pressed(key, x, y):
     """Обработка нажатий клавиш."""
-    global keys, toggle_pressed
+    global keys
     keycode = ord(key)
     if keycode in keys:
         keys[keycode] = True
-    elif keycode == ord('t') and not toggle_pressed['t']:
-        # Переключаем шейдер или теневую опцию
-        toggle_pressed['t'] = True
-        print("Toggle shadows")  # Пример действия
 
 
 # Обработка отпусканий клавиш
 def key_released(key, x, y):
     """Обработка отпусканий клавиш."""
-    global keys, toggle_pressed
+    global keys
     keycode = ord(key)
     if keycode == 27:  # ESC
         glutLeaveMainLoop()
         return
     if keycode in keys:
         keys[keycode] = False
-    elif keycode == ord('t'):
-        toggle_pressed['t'] = False  # Сбрасываем флаг переключения
 
 
 # Обработка движения камеры
