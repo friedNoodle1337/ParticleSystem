@@ -90,15 +90,15 @@ class Scene:
 
         glEnd()
 
-    def sort_objects(self):
-        """Разделяет объекты на непрозрачные и прозрачные и сортирует прозрачные по расстоянию до камеры."""
-        opaque_objects = [obj for obj in self.objects if not obj.material.transparent]
-        transparent_objects = [obj for obj in self.objects if obj.material.transparent]
-
-        # Сортируем прозрачные объекты по убыванию расстояния до камеры
-        transparent_objects.sort(key=lambda obj: -self.distance_to_camera(obj.position))
-
-        return opaque_objects, transparent_objects
+    # def sort_objects(self):
+    #     """Разделяет объекты на непрозрачные и прозрачные и сортирует прозрачные по расстоянию до камеры."""
+    #     opaque_objects = [obj for obj in self.objects if not obj.material.transparent]
+    #     transparent_objects = [obj for obj in self.objects if obj.material.transparent]
+    #
+    #     # Сортируем прозрачные объекты по убыванию расстояния до камеры
+    #     transparent_objects.sort(key=lambda obj: -self.distance_to_camera(obj.position))
+    #
+    #     return opaque_objects, transparent_objects
 
     def distance_to_camera(self, position):
         """Вычисляет расстояние от позиции до камеры."""
