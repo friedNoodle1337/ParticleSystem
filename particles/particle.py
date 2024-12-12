@@ -35,7 +35,7 @@ class Particle:
 
     def render(self, shader):
         # Устанавливаем цвет частицы с текущей прозрачностью
-        shader.set_vec4("particleColor", glm.vec4(self.color.x, self.color.y, self.color.z, self.get_transparency()))
+        shader.set_vec4('particleColor', glm.vec4(self.color.x, self.color.y, self.color.z, self.get_transparency()))
         # Устанавливаем размер точки
         glPointSize(self.size)
         # Рендерим частицу как точку

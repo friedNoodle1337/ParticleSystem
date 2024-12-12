@@ -1,5 +1,3 @@
-from functools import partial
-
 import glm
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -45,7 +43,7 @@ class RenderWindow:
         glutReshapeFunc(self.reshape)
         glutDisplayFunc(self.render)
         glutIdleFunc(self.render)
-        glutKeyboardFunc(key_pressed)  # Обычные клавиши
+        glutKeyboardFunc(key_pressed)  # Нажатие обычных клавиш
         glutKeyboardUpFunc(key_released)  # Отпускание обычных клавиш
         # Обработчик движения мыши с учётом размеров окна
         glutPassiveMotionFunc(create_mouse_movement_handler(self.scene.camera, self.get_window_size))

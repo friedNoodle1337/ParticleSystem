@@ -8,7 +8,7 @@ class Plane(Shape):
     def __init__(self, position=[0.0, 0.0, 0.0], scale=1.0, rotation=[0.0, 0.0, 0.0], material=None):
         super().__init__(position, scale, rotation, material)
         self.vertices = [
-            # positions         normals         texcoords
+            #  positions          normals      texcoords
             -0.5, 0.0, -0.5,   0.0, 1.0, 0.0,  0.0, 0.0,  # Bottom-left
              0.5, 0.0, -0.5,   0.0, 1.0, 0.0,  1.0, 0.0,  # Bottom-right
              0.5, 0.0,  0.5,   0.0, 1.0, 0.0,  1.0, 1.0,  # Top-right

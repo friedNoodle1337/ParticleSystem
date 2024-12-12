@@ -16,7 +16,7 @@ class Shape(ABC):
 
         self.VAO = glGenVertexArrays(1)
         self.VBO = glGenBuffers(1)
-        self.EBO = glGenBuffers(1)  # Для индексированных данных, если необходимо
+        self.EBO = glGenBuffers(1)
 
     @abstractmethod
     def setup_mesh(self):
@@ -38,7 +38,7 @@ class Shape(ABC):
         model = glm.rotate(model, glm.radians(self.rotation[2]), glm.vec3(0.0, 0.0, 1.0))
         model = glm.scale(model, glm.vec3(self.scale))
 
-        shader.set_mat4("model", model)
+        shader.set_mat4('model', model)
 
         # Применяем материал
         self.material.apply(shader)
