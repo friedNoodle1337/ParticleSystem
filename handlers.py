@@ -8,11 +8,11 @@ from particles.emitter import Emitter
 # Используем глобальный словарь для отслеживания нажатых клавиш (по keycode)
 keys = {
     119: False,  # W
-    97: False,   # A
+     97: False,  # A
     115: False,  # S
     100: False,  # D
-    99: False,   # C (спуск вниз)
-    32: False,   # SPACE (подъем вверх)
+     99: False,  # C (спуск вниз)
+     32: False,  # SPACE (подъем вверх)
      48: False,  # 0
      49: False,  # 1
      50: False,  # 2
