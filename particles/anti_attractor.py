@@ -82,7 +82,7 @@ class AntiAttractorHandler:
 
         # Расстояние до верхнего и нижнего оснований
         distance_to_top = local_particle_position.y - cylinder.height
-        distance_to_bottom = -local_particle_position.y
+        distance_to_bottom = local_particle_position.y
 
         # Определяем минимальное расстояние до поверхности цилиндра
         if local_particle_position.y > cylinder.height:
@@ -96,7 +96,7 @@ class AntiAttractorHandler:
         else:
             # Частица сбоку
             distance_to_surface = distance_to_side_surface
-            surface_normal = glm.normalize(glm.vec3(to_axis, 0))
+            surface_normal = glm.normalize(glm.vec3(to_axis.x, 0, to_axis.y))
 
         # Проверяем, находится ли частица в зоне действия эффекта
         if abs(distance_to_surface) > self.range_of_effect:
