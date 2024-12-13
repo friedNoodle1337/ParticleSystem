@@ -18,7 +18,7 @@ class Particle:
         self.color_fading = color_fading
         self.transparency_radius = transparency_radius
         self.has_trail = has_trail
-        self.trail = Trail(self.position) if self.has_trail else None
+        self.trail = Trail(self.position, 16) if self.has_trail else None
 
     def update(self, delta_time, acceleration):
         self.velocity += glm.vec3(*acceleration) * delta_time
