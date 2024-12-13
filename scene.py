@@ -33,7 +33,7 @@ class Scene:
         self.last_update_time = glutGet(GLUT_ELAPSED_TIME)
 
         # Настраиваем темную сцену
-        glClearColor(0.0, 0.0, 0.0, 1.0)  # Фоновый черный цвет
+        glClearColor(135.0 / 255.0, 206.0 / 255.0, 235.0 / 255.0, 1.0)  # Фоновый черный цвет
 
         # Создаем карту глубины для теней
         self.depth_map = DepthMap()
