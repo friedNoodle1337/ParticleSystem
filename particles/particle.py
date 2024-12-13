@@ -20,9 +20,6 @@ class Particle:
         self.has_trail = has_trail
         self.trail = Trail(self.position) if self.has_trail else None
 
-        # Рассчитываем, на сколько уменьшать скорость при каждом обновлении
-        self.speed_decrement = glm.length(self.velocity) / self.lifetime
-
     def update(self, delta_time, acceleration):
         self.velocity += glm.vec3(*acceleration) * delta_time
         self.position += self.velocity * delta_time
