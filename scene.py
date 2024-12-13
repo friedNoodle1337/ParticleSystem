@@ -5,7 +5,6 @@ import glm
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 
-from animations.animation import Animation
 from light.directional_light import DirectionalLight
 from materials.depth_map import DepthMap
 from materials.shader import Shader
@@ -24,8 +23,6 @@ class Scene:
 
         # Список объектов в сцене
         self.objects: List[Shape] = []
-        # Список анимаций, привязанных к объектам сцены
-        self.animations: List[Animation] = []
 
         # Система частиц в сцене
         self.particle_system = None
@@ -68,10 +65,6 @@ class Scene:
     def update_animations(self):
         """Обновление всех анимаций с учетом времени."""
         delta_time = self.get_delta_time()
-
-        # Обновляем каждую анимацию, передавая delta_time
-        for animation in self.animations:
-            animation.update(animation.target_object, delta_time)
 
         if self.particle_system:
             self.particle_system.update(delta_time)
