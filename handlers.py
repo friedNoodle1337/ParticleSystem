@@ -1,3 +1,5 @@
+from typing import List
+
 import glm
 from OpenGL.GLUT import glutLeaveMainLoop
 from OpenGL.raw.GLUT import glutWarpPointer
@@ -74,7 +76,7 @@ def handle_camera_movement(camera: Camera, delta_time=0.016):
 
 
 # Обработка настроек радиуса прозрачности для эмиттера
-def handle_transparency_options(emitters: list[Emitter]):
+def handle_transparency_options(emitters: List[Emitter]):
     """Изменение расстояния, на котором частицы становятся прозрачными."""
     for emitter in emitters:
         if keys[57]:    # 9
