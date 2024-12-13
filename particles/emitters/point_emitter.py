@@ -19,7 +19,7 @@ class PointEmitter(Emitter):
         self.has_trail = has_trail
 
     def emit_particle(self):
-        # Начальная скорость с уменьшением по мере удаления
+        # Случайные начальная скорость и направление
         speed = random.uniform(self.speed_range[0], self.speed_range[1])
         direction = glm.vec3(
             random.uniform(-1.0, 1.0),
