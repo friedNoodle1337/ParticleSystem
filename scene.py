@@ -192,8 +192,8 @@ class Scene:
         for obj in self.objects:
             obj.render(shader)
 
-    def initialize_particle_system(self):
-        anti_attractor_handler = AntiAttractorHandler(self.objects, 5.0)
+    def initialize_particle_system(self, range_of_effect=5.0):
+        anti_attractor_handler = AntiAttractorHandler(self.objects, range_of_effect)
         self.particle_system = ParticleSystem(anti_attractor_handler)
 
     def add_emitter_to_particle_system(self, emitter):
