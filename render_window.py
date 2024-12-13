@@ -84,11 +84,6 @@ class RenderWindow:
         # Обновляем анимации
         self.scene.update_animations()
 
-        # TODO: Удалить или пофиксить
-        # Рисуем оси координат и сетку
-        # self.scene.draw_grid()
-        # self.scene.draw_axes()
-
         # Первый проход с перспективы света для составления карты глубины для теней
         self.scene.render_depth_map(self.depth_shader)
 
