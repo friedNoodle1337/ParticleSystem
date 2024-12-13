@@ -61,14 +61,15 @@ def main():
     )
 
     # Создаем объекты и применяем материалы
-    cylinder = Cylinder(position=[0.0, 2.0, 0.0], base_radius=4.0, top_radius=4.0, height=1.0,
+    cylinder = Cylinder(position=[0.0, 2.0, -2.0], base_radius=2.0, top_radius=2.0, height=4.0, rotation=[90, 0, 0],
                         material=textured_material)
     scene.add_object(cylinder)
 
-    scene.initialize_particle_system(range_of_effect=2.0)
+    scene.initialize_particle_system(range_of_effect=1.0)
     # Эмиттер – точка со случайным направлением испускания частиц
     point_emitter = PointEmitter(
         position=[0.0, 6.0, 0.0],
+        position=[0.0, 4.0, -4.0],
         emission_rate=100,
         max_particles=1000,
         speed_range=(6.0, 8.0),
