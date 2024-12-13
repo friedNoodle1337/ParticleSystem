@@ -4,7 +4,8 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
 from handlers import (key_pressed, key_released,
-                      create_mouse_movement_handler, handle_camera_movement, reset_mouse_position)
+                      create_mouse_movement_handler, handle_camera_movement, reset_mouse_position,
+                      handle_transparency_options)
 from materials.shader import Shader
 from scene import Scene
 
@@ -53,6 +54,7 @@ class RenderWindow:
         glutMainLoop()
 
     def update(self, value):
+        handle_transparency_options(self.scene.particle_system.emitters)
         handle_camera_movement(self.scene.camera)  # Обновляем позицию камеры
         reset_mouse_position(self.width, self.height)  # Возвращаем мышь в центр экрана
         glutPostRedisplay()

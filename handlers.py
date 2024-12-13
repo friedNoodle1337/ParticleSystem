@@ -3,7 +3,7 @@ from OpenGL.GLUT import glutLeaveMainLoop
 from OpenGL.raw.GLUT import glutWarpPointer
 
 from camera import Camera
-
+from particles.emitter import Emitter
 
 # Используем глобальный словарь для отслеживания нажатых клавиш (по keycode)
 keys = {
@@ -13,6 +13,16 @@ keys = {
     100: False,  # D
     99: False,   # C (спуск вниз)
     32: False,   # SPACE (подъем вверх)
+     48: False,  # 0
+     49: False,  # 1
+     50: False,  # 2
+     51: False,  # 3
+     52: False,  # 4
+     53: False,  # 5
+     54: False,  # 6
+     55: False,  # 7
+     56: False,  # 8
+     57: False,  # 9
 }
 
 
@@ -61,6 +71,32 @@ def handle_camera_movement(camera: Camera, delta_time=0.016):
 
     # Применение движения к позиции камеры
     camera.position += move_direction * camera.speed * delta_time
+
+
+# Обработка настроек радиуса прозрачности для эмиттера
+def handle_transparency_options(emitters: list[Emitter]):
+    """Изменение расстояния, на котором частицы становятся прозрачными."""
+    for emitter in emitters:
+        if keys[57]:    # 9
+            emitter.set_transparency_radius(9.0)
+        elif keys[56]:  # 8
+            emitter.set_transparency_radius(8.0)
+        elif keys[55]:  # 7
+            emitter.set_transparency_radius(7.0)
+        elif keys[54]:  # 6
+            emitter.set_transparency_radius(6.0)
+        elif keys[53]:  # 5
+            emitter.set_transparency_radius(5.0)
+        elif keys[52]:  # 4
+            emitter.set_transparency_radius(4.0)
+        elif keys[51]:  # 3
+            emitter.set_transparency_radius(3.0)
+        elif keys[50]:  # 2
+            emitter.set_transparency_radius(2.0)
+        elif keys[49]:  # 1
+            emitter.set_transparency_radius(1.0)
+        elif keys[48]:  # 0
+            emitter.set_transparency_radius(0.0)
 
 
 # Создание обработчика движения мыши
