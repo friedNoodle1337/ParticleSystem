@@ -25,6 +25,10 @@ keys = {
      55: False,  # 7
      56: False,  # 8
      57: False,  # 9
+     45: False,  # -
+     61: False,  # =
+     91: False,  # [
+     93: False,  # ]
 }
 
 
@@ -76,9 +80,28 @@ def handle_camera_movement(camera: Camera, delta_time=0.016):
 
 
 # Обработка настроек радиуса прозрачности для эмиттера
-def handle_transparency_options(emitters: List[Emitter]):
-    """Изменение расстояния, на котором частицы становятся прозрачными."""
+def handle_emitters_options(emitters: List[Emitter]):
+    """
+    Переключение наличия следа у частиц:
+        - "-" - отключить
+        - "=" - включить
+    Переключение затухания цвета у частиц:
+        - "[" - отключить
+        - "]" - включить
+    Изменение расстояния, на котором частицы становятся прозрачными:
+        - цифры от 0 до 1 - соответствующие значения расстояния
+    """
     for emitter in emitters:
+        if keys[61]:    # =
+            emitter.has_trail = True
+        elif keys[45]:    # -
+            emitter.has_trail = False
+
+        if keys[93]:    # ]
+            emitter.color_fading = True
+        elif keys[91]:    # [
+            emitter.color_fading = False
+
         if keys[57]:    # 9
             emitter.set_transparency_radius(9.0)
         elif keys[56]:  # 8
