@@ -49,13 +49,6 @@ class Scene:
         """Добавляем объекты (кубы, конусы и т.д.) в сцену."""
         self.objects.append(obj)
 
-    def distance_to_camera(self, position):
-        """Вычисляет расстояние от позиции до камеры."""
-        cam_pos = self.camera.position
-        return sqrt((position[0] - cam_pos.x) ** 2 +
-                    (position[1] - cam_pos.y) ** 2 +
-                    (position[2] - cam_pos.z) ** 2)
-
     def get_delta_time(self):
         current_time = glutGet(GLUT_ELAPSED_TIME)
         delta_time = (current_time - self.last_update_time) / 1000.0
