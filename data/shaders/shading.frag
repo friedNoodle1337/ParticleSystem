@@ -45,8 +45,6 @@ float ShadowCalculation(vec4 fragPosLightSpace)
     return shadow;
 }
 
-
-
 out vec4 FragColor;
 
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir, vec3 diffuseColor)
