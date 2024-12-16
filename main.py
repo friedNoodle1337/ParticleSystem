@@ -1,12 +1,12 @@
-from camera import Camera
-from light.directional_light import DirectionalLight
-from materials.material import Material
-from materials.textures import ImageTexture
-from particles.emitters.point_emitter import PointEmitter
 from render_window import RenderWindow
 from scene import Scene
+from camera import Camera
+from light.directional_light import DirectionalLight
+from materials.textures import ImageTexture
+from materials.material import Material
 from shapes.plane import Plane
 from shapes.cylinder import Cylinder
+from particles.emitters.point_emitter import PointEmitter
 
 
 def main():
